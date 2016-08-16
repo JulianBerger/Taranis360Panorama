@@ -1,8 +1,7 @@
-# Taranis360Panorama
-FrSky Taranis Script for 360° Panorama
+#FrSky Taranis Script for 360° Panorama
 ---
 
-#How to install the Script?
+##How to install the Script?
 1. Put the script.lua file on your Taranis SD-Card at "\SCRIPTS\FUNCTIONS"
 2. Edit your OpenTX Model and add a special function with the action "Play Script" and the Parameter "script.lua"
 3. Assign a Switch to that special function
@@ -10,7 +9,7 @@ FrSky Taranis Script for 360° Panorama
 
 
 
-#How to tune the Script?
+##How to tune the Script?
 
 You need to set the channel of your Pitch and Yaw Axis of your Gimbal as well as the Channel for your Camera Shutter.
 
