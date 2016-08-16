@@ -1,27 +1,27 @@
-local scriptTimer		= -1
-local curYawStep		= 0
-local curPitchStep		= 0
+local scriptTimer				= -1
+local curYawStep				= 0
+local curPitchStep			= 0
 
-local shutCh			= 4
-local shutTime			= 100
-local shutValue			= 100
-local shutDelay			= 35
-local shutModified		= 0;
-local shutCFIndex		= 60;
+local shutCh						= 4
+local shutTime					= 100
+local shutValue					= 100
+local shutDelay					= 35
+local shutModified			= 0;
+local shutCFIndex				= 60;
 
-local yawCh				= 3
-local yawStepDuration	= 100
-local yawStepValue		= 100
-local yawSteps			= 8
-local yawModified		= 0;
-local yawCFIndex		= 61;
+local yawCh							= 3
+local yawStepDuration		= 100
+local yawStepValue			= 100
+local yawSteps					= 8
+local yawModified				= 0;
+local yawCFIndex				= 61;
 
-local pitchCh			= 2
+local pitchCh						= 2
 local pitchStepDuration	= 100
-local pitchStepValue	= 100
-local pitchSteps		= 4
-local pitchModified		= 0;
-local pitchCFIndex		= 62;
+local pitchStepValue		= 100
+local pitchSteps				= 4
+local pitchModified			= 0;
+local pitchCFIndex			= 62;
 
 -- Init function
 local function init()
