@@ -12,11 +12,11 @@ You need to set the channel of your Pitch and Yaw Axis of your Gimbal as well as
 
 ---
 
-You can set the speed of one gimbal roation step with the parameters `yawStepValue` and `pitchStepValue`, default is 100.
+You can set the speed of one gimbal roation step with the parameters `yawStepValue` and `pitchStepValue`, default is 100 (=1sec)
 
 ---
 
-You can set the duration of one gimbal roation step with the parameters `pitchStepDuration` and `pitchStepDuration`, default is 100.
+You can set the duration of one gimbal roation step with the parameters `pitchStepDuration` and `pitchStepDuration`, default is 100 (=1sec)
 
 ---
 
