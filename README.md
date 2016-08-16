@@ -3,6 +3,7 @@ FrSky Taranis Script for 360° Panorama
 ---
 
 You need to set the channel of your Pitch and Yaw Axis of your Gimbal as well as the Channel for your Camera Shutter.
+
 `local shutCh			= 4` = Shutter @ Channel 4
 
 `local yawCh			= 3` = Yaw @ Channel 3
