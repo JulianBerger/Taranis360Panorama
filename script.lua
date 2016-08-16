@@ -10,14 +10,14 @@ local shutModified		= 0;
 local shutCFIndex		= 60;
 
 local yawCh				= 3
-local yawStepDuration	= 50
+local yawStepDuration	= 100
 local yawStepValue		= 100
 local yawSteps			= 8
 local yawModified		= 0;
 local yawCFIndex		= 61;
 
 local pitchCh			= 2
-local pitchStepDuration	= 50
+local pitchStepDuration	= 100
 local pitchStepValue	= 100
 local pitchSteps		= 4
 local pitchModified		= 0;
