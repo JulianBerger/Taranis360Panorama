@@ -1,6 +1,6 @@
 -- SETTINGS --
 local shutCh						= 10
-local shutTime					= 3
+local shutTime					= 6
 local shutValue					= 10
 local shutDelay					= 1
 local shutModified			= 0
@@ -10,9 +10,9 @@ local shutInputValIndex	= 1
 local shutInputDelIndex	= 2
 
 local yawCh							= 13
-local yawStepDuration		= 11
+local yawStepDuration		= 10
 local yawStepValue			= 10
-local yawSteps					= 7
+local yawSteps					= 5
 local yawModified				= 0
 local yawCFIndex				= 61
 local yawInputDurIndex	= 3
@@ -20,10 +20,11 @@ local yawInputValIndex	= 4
 local yawInputStpIndex	= 5
 
 local pitchCh						= 12
-local pitchStepDuration	= 13
-local pitchStepValue		= 8
-local pitchSteps				= 4
+local pitchStepDuration	= 10
+local pitchStepValue		= 10
+local pitchSteps				= 3
 local pitchModified			= 0
+local pitchLastStepOneShot = 1
 local pitchCFIndex			= 62
 local pitchInputDurIndex= 6
 local pitchInputValIndex= 7
@@ -83,14 +84,14 @@ local function init()
 	curYawStep = 1
 	curPitchStep = 1
 	pitchModified = 1 --for initial shutter release
-	
+
 	playTone(1800, 50, 180, 0, 0 )
 	playTone(1800, 50, 180, 0, 0 )
 end
 
 -- Main
 local function run(event)
-	
+
 	-- Sleep
 	if scriptTimer > getTime() then
 		return 0
@@ -122,13 +123,13 @@ local function run(event)
 		setCFState(yawCFIndex, 0)
 		setCFState(pitchCFIndex, 0)
 		setCFState(shutCFIndex, 0)
-		scriptTimer = getTime() + shutDelay*10
+		scriptTimer = getTime() + shutTime*10
 		return 0
 	end
 
 
 	-- Modify YAW
-	if curYawStep <= yawSteps-1 then
+	if curYawStep < yawSteps then
 		yawModified = 1
 		setCFState(yawCFIndex, 1)
 		curYawStep = curYawStep+1
@@ -137,12 +138,17 @@ local function run(event)
 		return 0
 	else
 		-- Modify PITCH
-		if curPitchStep <= pitchSteps-1 then
+		if curPitchStep < pitchSteps then
 			curYawStep = 1	--reset yaw steps
 			pitchModified = 1
 			setCFState(pitchCFIndex, 1)
 			curPitchStep = curPitchStep+1
-
+			
+			-- Check if it's the last pitch step
+			if (pitchLastStepOneShot == 1 and curPitchStep == pitchSteps) then
+				curYawStep = yawSteps	-- No Yaw movement on last step if pitchLastStepOneShot is set
+			end
+			
 			scriptTimer = getTime() + pitchStepDuration*10
 			return 0
 		else
@@ -153,7 +159,7 @@ local function run(event)
 
 			init()
 
-			scriptTimer = getTime() + 3000
+			scriptTimer = getTime() + 1000
 			return 0
 		end
 
