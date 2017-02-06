@@ -2,10 +2,9 @@
 ---
 
 ##How to install the Script?
-1. Put the script.lua file on your Taranis SD-Card at "\SCRIPTS\FUNCTIONS"
-2. Edit your OpenTX Model and add a special function with the action "Play Script" and the Parameter "script.lua"
-3. Assign a Switch to that special function
-4. Go out and shoot some 360° Panorama!
+1. Put the script.lua file on your Taranis SD-Card at "\SCRIPTS\TELEMETRY"
+2. Edit your OpenTX Model and add the script to a telemetry page
+3. Go out and shoot some 360° Panorama!
 
 
 
