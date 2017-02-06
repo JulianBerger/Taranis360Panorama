@@ -1,6 +1,7 @@
 #FrSky Taranis Script for 360° Panorama
 ---
 ![Telemetry Screen](http://i.imgur.com/JGhLM0X.png)
+![Telemetry Screen2](http://i.imgur.com/D7vjg4J.png)
 
 ##How to install the Script?
 1. Put the script.lua file on your Taranis SD-Card at "\SCRIPTS\TELEMETRY"
